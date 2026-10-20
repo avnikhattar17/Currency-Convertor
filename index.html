@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert amounts between popular world currencies.">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <h1>Currency Converter</h1>
+        <form id="converter-form">
+            <div class="amount">
+                <label for="amount">Enter amount</label>
+                <input id="amount" name="amount" type="number" value="100" min="0" step="any" inputmode="decimal" required>
+            </div>
+
+            <div class="dropdown">
+                <div class="currency-field">
+                    <label for="from-currency">From</label>
+                    <div class="select-container">
+                        <img id="from-flag" src="https://flagsapi.com/US/flat/64.png" alt="">
+                        <select id="from-currency" name="from" aria-label="Convert from currency">
+                            <option value="USD" selected>USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                            <option value="INR">INR</option>
+                            <option value="AUD">AUD</option>
+                            <option value="CAD">CAD</option>
+                            <option value="JPY">JPY</option>
+                            <option value="CNY">CNY</option>
+                            <option value="CHF">CHF</option>
+                            <option value="NZD">NZD</option>
+                            <option value="SGD">SGD</option>
+                            <option value="HKD">HKD</option>
+                            <option value="KRW">KRW</option>
+                            <option value="BRL">BRL</option>
+                            <option value="MXN">MXN</option>
+                            <option value="ZAR">ZAR</option>
+                            <option value="SEK">SEK</option>
+                            <option value="NOK">NOK</option>
+                            <option value="DKK">DKK</option>
+                            <option value="PLN">PLN</option>
+                            <option value="TRY">TRY</option>
+                            <option value="THB">THB</option>
+                            <option value="IDR">IDR</option>
+                            <option value="AED">AED</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="swap-button" id="swap-currencies" type="button" aria-label="Swap currencies" title="Swap currencies">
+                    <i class="fa-solid fa-arrow-right-arrow-left" aria-hidden="true"></i>
+                </button>
+
+                <div class="currency-field">
+                    <label for="to-currency">To</label>
+                    <div class="select-container">
+                        <img id="to-flag" src="https://flagsapi.com/IN/flat/64.png" alt="">
+                        <select id="to-currency" name="to" aria-label="Convert to currency">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                            <option value="INR" selected>INR</option>
+                            <option value="AUD">AUD</option>
+                            <option value="CAD">CAD</option>
+                            <option value="JPY">JPY</option>
+                            <option value="CNY">CNY</option>
+                            <option value="CHF">CHF</option>
+                            <option value="NZD">NZD</option>
+                            <option value="SGD">SGD</option>
+                            <option value="HKD">HKD</option>
+                            <option value="KRW">KRW</option>
+                            <option value="BRL">BRL</option>
+                            <option value="MXN">MXN</option>
+                            <option value="ZAR">ZAR</option>
+                            <option value="SEK">SEK</option>
+                            <option value="NOK">NOK</option>
+                            <option value="DKK">DKK</option>
+                            <option value="PLN">PLN</option>
+                            <option value="TRY">TRY</option>
+                            <option value="THB">THB</option>
+                            <option value="IDR">IDR</option>
+                            <option value="AED">AED</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <p class="msg" id="result" role="status" aria-live="polite">Getting exchange rate…</p>
+            <p class="error" id="error-message" role="alert" hidden></p>
+            <button class="convert-button" id="convert-button" type="submit">Get exchange rate</button>
+        </form>
+    </main>
+</body>
+</html>
